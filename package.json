@@ -1,0 +1,92 @@
+{
+  "name": "ai-typewriter",
+  "displayName": "AI Typewriter",
+  "description": "Turns AI responses into realistic live coding — with typing speed, thinking pauses, and human-like rhythm.",
+  "version": "1.0.0",
+  "publisher": "your-publisher-id",
+  "author": {
+    "name": "Blamp26"
+  },
+  "contributors": [
+    {
+      "name": "bvaj7x"
+    }
+  ],
+  "enabledApiProposals": [
+    "languageModelSystem"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "typewriter",
+    "animation",
+    "claude",
+    "openai",
+    "cursor"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "editor/title": [
+        {
+          "command": "aiTypewriter.generateWithCopilot",
+          "group": "navigation",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "aiTypewriter.generateWithCopilot",
+        "title": "AI Typewriter: Edit with Copilot",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "aiTypewriter.cancel",
+        "title": "AI Typewriter: Cancel Generation"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "aiTypewriter.generateWithCopilot",
+        "key": "ctrl+shift+e",
+        "mac": "cmd+shift+e",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "AI Typewriter",
+      "properties": {
+        "aiTypewriter.baseSpeed": {
+          "type": "number",
+          "default": 28,
+          "minimum": 1,
+          "maximum": 500,
+          "description": "Base typing delay per character in milliseconds. Lower = faster."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package",
+    "test": "mocha out/test/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.19.37",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^2.32.0",
+    "mocha": "^11.7.5",
+    "typescript": "^5.9.3"
+  }
+}
