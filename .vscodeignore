@@ -1,0 +1,15 @@
+src/**
+out/test/**
+**/*.test.js
+**/*.map
+.vscode/**
+.vscode-test/**
+.gitignore
+.eslintrc.json
+tsconfig.json
+node_modules/**
+run-test.js
+stress-test.js
+test.js
+*.vsix
+ai-typewriter-bugs.md
