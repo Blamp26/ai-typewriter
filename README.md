@@ -75,6 +75,13 @@ Install the generated `.vsix`:
 
 ---
 
+## Contributors
+
+- **Blamp26** ([@Blamp26](https://github.com/Blamp26)) — Lead Developer
+- **bvaj7x** ([@bvaj7x](https://github.com/bvaj7x)) — Core Contributor
+
+---
+
 ## License
 
 MIT
